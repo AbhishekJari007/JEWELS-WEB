@@ -1,1 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D Creation Jewels | Stand Out in the Crowd</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #1a4d2e;
+            --secondary-green: #2d6a4f;
+            --accent-green: #40916c;
+            --light-green: #74c69d;
+            --pale-green: #b7e4c7;
+            --cream: #fefae0;
+            --gold: #d4af37;
+            --gold-light: #f4d03f;
+            --white: #ffffff;
+            --off-white: #f8f9fa;
+            --text-dark: #1a1a2e;
+            --text-light: #6c757d;
+            --border-color: #e9ecef;
+            --shadow-light: rgba(26, 77, 46, 0.08);
+            --shadow-medium: rgba(26, 77, 46, 0.12);
+            --shadow-dark: rgba(26, 77, 46, 0.2);
+            --gradient-green: linear-gradient(135deg, #1a4d2e 0%, #2d6a4f 100%);
+            --gradient-gold: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
 
+        [data-theme="dark"] {
+            --primary-green: #40916c;
+            --secondary-green: #52b788;
+            --accent-green: #74c69d;
+            --light-green: #95d5b2;
+            --pale-green: #b7e4c7;
+            --cream: #1a1a2e;
+            --white: #16213e;
+            --off-white: #1a1a2e;
+            --text-dark: #f8f9fa;
+            --text-light: #adb5bd;
+            --border-color: #2d3748;
+            --shadow-light: rgba(64, 145, 108, 0.15);
+            --shadow-medium: rgba(64, 145, 108, 0.2);
+            --shadow-dark: rgba(64, 145, 108, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--off-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Announcement Bar */
+        .announcement-bar {
+            background: var(--gradient-green);
+            color: var(--white);
+            text-align: center;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .announcement-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            100% { left: 100%; }
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 20px var(--shadow-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        [data-theme="dark"] header {
+            background: rgba(22, 33, 62, 0.95);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            background: var(--gradient-green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .logo:hover {
+            transform: scale(1.02);
+        }
+
+        .tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--gold);
+            margin-top: 5px;
+            letter-spacing: 2px;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .theme-toggle {
+            background: var(--off-white);
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            padding: 8px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            transition: var(--transition-smooth);
+            color: var(--text-dark);
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--accent-green);
+            transform: scale(1.05);
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--off-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-bounce);
+            border: 2px solid var(--border-color);
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .header-icon:hover {
+            transform: translateY(-3px) scale(1.1);
+            border-color: var(--accent-green);
+            background: var(--pale-green);
+        }
+
+        .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--gold);
+            color: var(--white);
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 50%;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 15px 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: var(--text-dark);
+            text-decoration: none;
+            position: relative;
+            padding: 8px 0;
+            transition: var(--transition-smooth);
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-green);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-green);
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+            animation: float 15s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-30px, 30px) rotate(5deg); }
+        }
+
+        .hero-content {
+            color: var(--white);
+            max-width: 650px;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--white);
+            color: var(--primary-green);
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: var(--transition-bounce);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45%;
+            height: 70%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500"><rect fill="%23d4af37" opacity="0.1" width="400" height="500"/><circle cx="200" cy="250" r="150" fill="none" stroke="%23ffffff" stroke-width="2" opacity="0.3"/></svg>') center/cover;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Categories Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: var(--pale-green);
+            color: var(--primary-green);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            transition: var(--transition-bounce);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .category-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 50px var(--shadow-medium);
+        }
+
+        .category-image {
+            height: 300px;
+            background: var(--gradient-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-image::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.6; }
+        }
+
+        .category-icon {
+            font-size: 4rem;
+            color: var(--white);
+            z-index: 2;
+        }
+
+        .category-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .category-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .category-count {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Collections Section */
+        .collections-scroll {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .collections-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .collection-item {
+            flex: 0 0 auto;
+            min-width: 300px;
+            height: 400px;
+            background: var(--gradient-green);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition-bounce);
+        }
+
+        .collection-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+        }
+
+        .collection-item:hover {
+            transform: scale(1.05);
+        }
+
+        .collection-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 10px;
+        }
+
+        .collection-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            color: var(--primary-green);
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            position: relative;
+            z-index: 2;
+            transition: var(--transition-smooth);
+        }
+
+        .collection-btn:hover {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        /* Products Grid */
+        .products-section {
+            background: var(--white);
+        }
+
+        .filter-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 10px 25px;
+            border-radius: 50px;
+            background: var(--off-white);
+            border: 2px solid var(--border-color);
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .filter-tab.active,
+        .filter-tab:hover {
+            background: var(--primary-green);
+            color: var(--white);
+            border-color: var(--primary-green);
+        }
+
+        .sort-dropdown {
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 2px solid var(--border-color);
+            background: var(--white);
+            color: var(--text-dark);
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--off-white);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--transition-bounce);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px var(--shadow-medium);
+        }
+
+        .product-image-wrapper {
+            position: relative;
+            height: 320px;
+            background: var(--gradient-green);
+            overflow: hidden;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+
+        .product-badges {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .product-badge {
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-new {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        .badge-sale {
+            background: #e74c3c;
+            color: var(--white);
+        }
+
+        .badge-sold {
+            background: var(--text-light);
+            color: var(--white);
+        }
+
+        .product-actions {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: var(--transition-smooth);
+        }
+
+        .product-card:hover .product-actions {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .action-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--white);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-bounce);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .action-btn:hover {
+            transform: scale(1.2);
+            background: var(--primary-green);
+            color: var(--white);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            font-size: 0.8rem;
+            color: var(--accent-green);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .current-price {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .original-price {
+            font-size: 1rem;
+            color: var(--text-light);
+            text-decoration: line-through;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 14px;
+            background: var(--gradient-green);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-bounce);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .add-to-cart:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px var(--shadow-medium);
+        }
+
+        .add-to-cart:disabled {
+            background: var(--text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Services Section */
+        .services-section {
+            background: var(--cream);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: var(--transition-bounce);
+            box-shadow: 0 10px 30px var(--shadow-light);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: var(--pale-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-green);
+        }
+
+        .service-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .service-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--gradient-green);
+            padding: 80px 0;
+            color: var(--white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            letter-spacing: 1px;
+        }
+
+        /* Testimonials */
+        .testimonials-slider {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 20px 0;
+            scrollbar-width: none;
+        }
+
+        .testimonials-slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .testimonial-card {
+            flex: 0 0 auto;
+            min-width: 400px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+        }
+
+        .testimonial-stars {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--pale-green);
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .author-location {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand .logo {
+            color: var(--white);
+            -webkit-text-fill-color: var(--white);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition-bounce);
+        }
+
+        .social-link:hover {
+            background: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .footer-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--gold);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 10px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 14px 20px;
+            border-radius: 50px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-size: 0.95rem;
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .newsletter-btn {
+            padding: 14px 25px;
+            background: var(--gold);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition-bounce);
+        }
+
+        .newsletter-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 15px;
+        }
+
+        .payment-icon {
+            width: 50px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            border-radius: 2px;
+            transition: var(--transition-smooth);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-image {
+                display: none;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .testimonial-card {
+                min-width: 300px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-top {
+                flex-wrap: wrap;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top-color: var(--gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-green);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-smooth);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">D Creation</div>
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        ✨ Free Shipping on Orders Above ₹999 | Use Code: WELCOME10 for 10% Off First Order ✨
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div>
+                    <a href="#" class="logo">D Creation</a>
+                    <div class="tagline">Stand Out in the Crowd</div>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                        <span>Dark Mode</span>
+                    </button>
+                    
+                    <div class="header-icons">
+                        <div class="header-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="header-icon">
+                            <i class="fas fa-heart"></i>
+                            <span class="badge">3</span>
+                        </div>
+                        <div class="header-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="badge">2</span>
+                        </div>
+                    </div>
+                    
+                    <button class="mobile-menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#new-arrivals" class="nav-link">New Arrivals</a></li>
+                    <li><a href="#shop-by-category" class="nav-link">Shop by Category</a></li>
+                    <li><a href="#collections" class="nav-link">Collections</a></li>
+                    <li><a href="#custom-jewellery" class="nav-link">Custom Jewellery</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#about" class="nav-link">Our Story</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">NEW COLLECTION 2024</span>
+                <h1>Luxury in Every Detail, Affordable in Every Way</h1>
+                <p>Discover exquisite imitation jewellery crafted with precision. From 1-2 gram gold polish to Singapore diamonds, we bring you elegance that speaks volumes.</p>
+                <a href="#new-arrivals" class="btn-primary">
+                    Explore Collection <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="hero-image"></div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section" id="shop-by-category">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">SHOP BY CATEGORY</span>
+                <h2 class="section-title">Find Your Perfect Piece</h2>
+                <p class="section-subtitle">Curated collections for every occasion</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-image">
+                        <i class="fas fa-gem category-icon"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-name">Necklaces</h3>
+                        <p class="category-count">245+ Products</p>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <i class="fas fa-ring category-icon"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-name">Rings</h3>
+                        <p class="category-count">180+ Products</p>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <i class="fas fa-star category-icon"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-name">Earrings</h3>
+                        <p class="category-count">320+ Products</p>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <i class="fas fa-link category-icon"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-name">Bracelets</h3>
+                        <p class="category-count">150+ Products</p>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <i class="fas fa-crown category-icon"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-name">Sets</h3>
+                        <p class="category-count">200+ Products</p>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <i class="fas fa-spa category-icon"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3 class="category-name">Moti & Gems</h3>
+                        <p class="category-count">125+ Products</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="section" id="collections" style="background: var(--off-white);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">EXCLUSIVE COLLECTIONS</span>
+                <h2 class="section-title">Shop by Collection</h2>
+                <p class="section-subtitle">Handpicked styles for the modern woman</p>
+            </div>
+            
+            <div class="collections-scroll">
+                <div class="collection-item">
+                    <h3 class="collection-name">Bridal Collection</h3>
+                    <a href="#" class="collection-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="collection-item">
+                    <h3 class="collection-name">Party Wear</h3>
+                    <a href="#" class="collection-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="collection-item">
+                    <h3 class="collection-name">Daily Elegance</h3>
+                    <a href="#" class="collection-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="collection-item">
+                    <h3 class="collection-name">Traditional</h3>
+                    <a href="#" class="collection-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="collection-item">
+                    <h3 class="collection-name">Contemporary</h3>
+                    <a href="#" class="collection-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="section products-section" id="new-arrivals">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">FRESH FROM THE OVEN</span>
+                <h2 class="section-title">New Arrivals</h2>
+                <p class="section-subtitle">Be the first to own our latest creations</p>
+            </div>
+            
+            <div class="filter-bar">
+                <div class="filter-tabs">
+                    <button class="filter-tab active">All</button>
+                    <button class="filter-tab">Necklaces</button>
+                    <button class="filter-tab">Earrings</button>
+                    <button class="filter-tab">Rings</button>
+                    <button class="filter-tab">Sets</button>
+                    <button class="filter-tab">Sale</button>
+                </div>
+                <select class="sort-dropdown">
+                    <option>Sort by: Featured</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                    <option>Newest First</option>
+                    <option>Best Selling</option>
+                </select>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <div class="product-image"></div>
+                        <div class="product-badges">
+                            <span class="product-badge badge-new">NEW</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                            <button class="action-btn"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Gold Polish</div>
+                        <h3 class="product-name">Royal Kundan Necklace Set</h3>
+                        <div class="product-price">
+                            <span class="current-price">₹2,499</span>
+                            <span class="original-price">₹4,999</span>
+                        </div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <div class="product-image"></div>
+                        <div class="product-badges">
+                            <span class="product-badge badge-sale">-30%</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                            <button class="action-btn"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Singapore Diamond</div>
+                        <h3 class="product-name">Emerald Cut Diamond Ring</h3>
+                        <div class="product-price">
+                            <span class="current-price">₹3,999</span>
+                            <span class="original-price">₹5,999</span>
+                        </div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <div class="product-image"></div>
+                        <div class="product-badges">
+                            <span class="product-badge badge-new">NEW</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                            <button class="action-btn"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Imported Moti</div>
+                        <h3 class="product-name">Pearl Drop Earrings</h3>
+                        <div class="product-price">
+                            <span class="current-price">₹899</span>
+                            <span class="original-price">₹1,499</span>
+                        </div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <div class="product-image"></div>
+                        <div class="product-badges">
+                            <span class="product-badge badge-sold">SOLD OUT</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Silver</div>
+                        <h3 class="product-name">Oxidized Choker Necklace</h3>
+                        <div class="product-price">
+                            <span class="current-price">₹1,299</span>
+                        </div>
+                        <button class="add-to-cart" disabled>
+                            <i class="fas fa-times"></i> Sold Out
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <div class="product-image"></div>
+                        <div class="product-badges">
+                            <span class="product-badge badge-new">NEW</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                            <button class="action-btn"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Gemstone</div>
+                        <h3 class="product-name">Ruby Stone Mala</h3>
+                        <div class="product-price">
+                            <span class="current-price">₹4,499</span>
+                            <span class="original-price">₹6,999</span>
+                        </div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <div class="product-image"></div>
+                        <div class="product-badges">
+                            <span class="product-badge badge-sale">-40%</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn"><i class="fas fa-eye"></i></button>
+                            <button class="action-btn"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Chipani Set</div>
+                        <h3 class="product-name">Traditional Chipani Earring Set</h3>
+                        <div class="product-price">
+                            <span class="current-price">₹1,799</span>
+                            <span class="original-price">₹2,999</span>
+                        </div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">WHAT WE OFFER</span>
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Beyond just selling jewellery</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3 class="service-title">Custom Jewellery</h3>
+                    <p class="service-desc">Design your dream piece with our expert craftsmen. Bring your vision to life.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="service-title">Polishing Service</h3>
+                    <p class="service-desc">Restore the shine of your precious jewellery with our professional polishing.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3 class="service-title">Repair Service</h3>
+                    <p class="service-desc">Broken jewellery? We fix it all with precision and care.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="service-title">Free Shipping</h3>
+                    <p class="service-desc">Free delivery on orders above ₹999 across India.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div>
+                    <div class="stat-number" data-target="5000">0</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div>
+                    <div class="stat-number" data-target="1200">0</div>
+                    <div class="stat-label">Unique Designs</div>
+                </div>
+                <div>
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div>
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">% Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">LOVE NOTES</span>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Real stories from real customers</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Absolutely in love with my Kundan set! The quality is exceptional and it looks so premium. Everyone at the wedding asked where I got it from!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div>
+                            <div class="author-name">Priya Sharma</div>
+                            <div class="author-location">Mumbai</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The custom jewellery service is amazing! They created exactly what I envisioned. The attention to detail is incredible. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div>
+                            <div class="author-name">Ananya Patel</div>
+                            <div class="author-location">Delhi</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Best imitation jewellery I've ever bought! The Singapore diamond ring sparkles like real diamond. Worth every penny!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div>
+                            <div class="author-name">Sneha Reddy</div>
+                            <div class="author-location">Bangalore</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">D Creation</a>
+                    <p>Luxury jewellery at affordable prices. We craft dreams into reality with every piece we create. Stand out in the crowd with D Creation Jewels.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Necklaces</a></li>
+                        <li><a href="#">Earrings</a></li>
+                        <li><a href="#">Rings</a></li>
+                        <li><a href="#">Bracelets</a></li>
+                        <li><a href="#">Jewellery Sets</a></li>
+                        <li><a href="#">Bridal Collection</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Stay Updated</h3>
+                    <p>Subscribe for exclusive offers and new arrivals</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email">
+                        <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 D Creation Jewels. All rights reserved.</p>
+                <div class="payment-methods">
+                    <div class="payment-icon">VISA</div>
+                    <div class="payment-icon">MC</div>
+                    <div class="payment-icon">UPI</div>
+                    <div class="payment-icon">COD</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1500);
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            const isDark = html.getAttribute('data-theme') === 'dark';
+            html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            themeToggle.innerHTML = isDark 
+                ? '<i class="fas fa-moon"></i><span>Dark Mode</span>'
+                : '<i class="fas fa-sun"></i><span>Light Mode</span>';
+        });
+
+        // Scroll to Top
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Filter Tabs
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                filterTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+            });
+        });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.stat-number');
+        let counterAnimated = false;
+
+        const animateCounters = () => {
+            if (counterAnimated) return;
+            
+            const statsSection = document.querySelector('.stats-section');
+            const sectionTop = statsSection.getBoundingClientRect().top;
+            
+            if (sectionTop < window.innerHeight * 0.8) {
+                counterAnimated = true;
+                
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const increment = target / 50;
+                    let current = 0;
+                    
+                    const updateCounter = () => {
+                        if (current < target) {
+                            current += increment;
+                            counter.textContent = Math.ceil(current).toLocaleString();
+                            setTimeout(updateCounter, 30);
+                        } else {
+                            counter.textContent = target.toLocaleString() + '+';
+                        }
+                    };
+                    
+                    updateCounter();
+                });
+            }
+        };
+
+        window.addEventListener('scroll', animateCounters);
+
+        // Add to Cart Animation
+        const addToCartBtns = document.querySelectorAll('.add-to-cart:not(:disabled)');
+        
+        addToCartBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-check"></i> Added!';
+                this.style.background = 'var(--gold)';
+                
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                    this.style.background = '';
+                }, 2000);
+                
+                // Update cart badge
+                const cartBadge = document.querySelector('.header-icon .fa-shopping-bag').parentElement.querySelector('.badge');
+                if (cartBadge) {
+                    cartBadge.textContent = parseInt(cartBadge.textContent) + 1;
+                }
+            });
+        });
+
+        // Wishlist Animation
+        const heartBtns = document.querySelectorAll('.action-btn .fa-heart');
+        
+        heartBtns.forEach(icon => {
+            icon.parentElement.addEventListener('click', function(e) {
+                e.stopPropagation();
+                icon.classList.toggle('fas');
+                icon.classList.toggle('far');
+                
+                if (icon.classList.contains('fas')) {
+                    this.style.color = '#e74c3c';
+                } else {
+                    this.style.color = '';
+                }
+            });
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.category-card, .product-card, .service-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Parallax effect for hero
+        window.addEventListener('scroll', () => {
+            const hero = document.querySelector('.hero');
+            const scrolled = window.scrollY;
+            hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+        });
+
+        // Search functionality placeholder
+        document.querySelector('.fa-search').parentElement.addEventListener('click', () => {
+            const searchTerm = prompt('Search for jewellery...');
+            if (searchTerm) {
+                alert(`Searching for: ${searchTerm}\n(This would integrate with your product database)`);
+            }
+        });
+
+        console.log('🌟 D Creation Jewels - Luxury in Affordable Price 🌟');
+        console.log('Website loaded successfully!');
+    </script>
+</body>
+</html>
